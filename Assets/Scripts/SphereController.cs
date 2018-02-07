@@ -5,6 +5,8 @@ using UnityEngine;
 public class SphereController : MonoBehaviour
 {
     public float ballSpeed;
+    public float highestDistance;
+    public GameObject triggerCollider;
     private Rigidbody rb;
 
 	void Start ()
@@ -25,31 +27,21 @@ public class SphereController : MonoBehaviour
 
         if (Input.GetKey("d"))
             rb.AddForce(Vector3.right * ballSpeed);
+
+        transform.GetComponent<SphereCollider>().radius = triggerCollider.GetComponent<SphereTrigger>().highestDistance;
     }
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag != "Pickupable")
-            return;
-
-        bool hitMainCollider = false;
-
-        foreach(ContactPoint contact in col.contacts)
-        {
-            hitMainCollider = true;
-            break;
-        }
-        
-        if (hitMainCollider)
-        {
-            //Destroy(col.gameObject.GetComponent<Collider>());
-            //Destroy(col.gameObject.GetComponent<Rigidbody>());
-
-            Vector3 minSize = col.gameObject.GetComponent<Collider>().bounds.min;
-            Debug.Log(minSize);
-            Vector3 maxSize = col.gameObject.GetComponent<Collider>().bounds.max;
-            Debug.Log(maxSize);
-            col.transform.parent = transform;
-        }
+        //Destroy(col.gameObject.GetComponent<Collider>());
+        /*
+                    float centerDiff = (col.transform.position - transform.position).magnitude;
+                    if(centerDiff > highestDistance)
+                    {
+                        highestDistance = centerDiff;
+                    }
+                    Debug.Log(centerDiff);
+                    transform.GetComponent<SphereCollider>().radius = highestDistance;*/
     }
+
 }
