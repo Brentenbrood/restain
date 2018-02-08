@@ -302,7 +302,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 258465113}
-  m_LocalRotation: {x: 0.5735764, y: 0, z: 0, w: 0.8191521}
+  m_LocalRotation: {x: 0.5735764, y: -0, z: -0, w: 0.8191521}
   m_LocalPosition: {x: 0, y: 8.63, z: -3.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -525,7 +525,6 @@ MonoBehaviour:
   ballSpeed: 10
   highestDistance: 0
   triggerCollider: {fileID: 392827465}
-  enableTilt: 0
 --- !u!1 &358164716
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,7 +746,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 632645573}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.8, y: 5.9, z: 70}
+  m_LocalPosition: {x: -8.8, y: 5.7, z: 120.3}
   m_LocalScale: {x: 1, y: 20, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1082,11 +1081,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a9fd8981cc842489bd9c22616fb541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextPhysiological: {fileID: 1296872824}
-  TextSafety: {fileID: 965051128}
-  TextBelonging: {fileID: 1669905368}
-  TextSelfEsteem: {fileID: 358164718}
-  TextSelfActualization: {fileID: 1802194114}
+  SliderPhysiological: {fileID: 0}
+  SliderSafety: {fileID: 0}
+  SliderBelonging: {fileID: 0}
+  SliderSelfEsteem: {fileID: 0}
+  SliderSelfActualization: {fileID: 0}
 --- !u!4 &1061678089
 Transform:
   m_ObjectHideFlags: 0

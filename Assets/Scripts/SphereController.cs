@@ -9,14 +9,6 @@ public class SphereController : MonoBehaviour
     public GameObject triggerCollider;
     private Rigidbody rb;
 
-    public bool enableTilt;
-    void OnGUI()
-    {
-        if (Input.gyro.enabled)
-            GUILayout.Toggle(enableTilt, "Enable tilt control");
-
-        
-    }
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
@@ -37,7 +29,7 @@ public class SphereController : MonoBehaviour
         if (Input.GetKey("d"))
             rb.AddForce(Vector3.right * ballSpeed);
 
-        Input.gyro.enabled = false;
+        Input.gyro.enabled = true;
         float initialOrientationX = Input.gyro.rotationRateUnbiased.x;
         float initialOrientationY = Input.gyro.rotationRateUnbiased.y;
         rb.AddForce (initialOrientationY * ballSpeed * 2.0f, 0.0f , -initialOrientationX * ballSpeed * 2.0f);
