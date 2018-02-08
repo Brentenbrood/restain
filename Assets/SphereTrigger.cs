@@ -7,6 +7,7 @@ public class SphereTrigger : MonoBehaviour
 
     public float highestDistance;
 
+    public StatisticsChecker statistics;
     private SphereCollider sphereCollider;
 
     // Use this for initialization
@@ -14,7 +15,6 @@ public class SphereTrigger : MonoBehaviour
     {
         highestDistance = 0.5f;
         sphereCollider = GetComponent<SphereCollider>();
-
     }
 
     // Update is called once per frame
@@ -26,6 +26,18 @@ public class SphereTrigger : MonoBehaviour
     {
         if (col.gameObject.tag != "Pickupable")
             return;
+
+        if (col.gameObject.GetComponent<Points>().category == "Physiological")
+            statistics.stat["Physiological"] += col.gameObject.GetComponent<Points>().points;
+        if (col.gameObject.GetComponent<Points>().category == "Safety")
+            statistics.stat["Safety"] += col.gameObject.GetComponent<Points>().points;
+        if (col.gameObject.GetComponent<Points>().category == "Belonging")
+            statistics.stat["Belonging"] += col.gameObject.GetComponent<Points>().points;
+        if (col.gameObject.GetComponent<Points>().category == "SelfEsteem")
+            statistics.stat["SelfEsteem"] += col.gameObject.GetComponent<Points>().points;
+        if (col.gameObject.GetComponent<Points>().category == "SelfActualization")
+            statistics.stat["SelfActualization"] += col.gameObject.GetComponent<Points>().points;
+
 
         //col.transform.Translate(col.transform.position - transform.position);
         /*

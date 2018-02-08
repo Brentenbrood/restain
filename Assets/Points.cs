@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Points {
-
+public class Points : MonoBehaviour
+{
     public string category;
     public int points;
 
