@@ -222,11 +222,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 237469428}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84945ff6ff543f34386801f89fb527c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 60eab96ed599f5e43a9b4efcff47fe02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  category: 
-  points: 0
+  category: SelfActualization
+  points: 10
 --- !u!1 &258465113
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,7 +549,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 392827465}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1657ac55b2199342be3d53624d39110, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c7416a1f2318754d8be0eed91aa0e56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   highestDistance: 0
@@ -737,11 +737,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1004500176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84945ff6ff543f34386801f89fb527c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 60eab96ed599f5e43a9b4efcff47fe02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  category: 
-  points: 0
+  category: Safety
+  points: 5
 --- !u!1 &1061610493
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,11 +851,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1061610493}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84945ff6ff543f34386801f89fb527c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 60eab96ed599f5e43a9b4efcff47fe02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  category: 
-  points: 0
+  category: SelfActualization
+  points: 5
 --- !u!1 &1061678087
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,7 +880,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1061678087}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adb5d7ece45a26f4a91b82a13eb12f86, type: 3}
+  m_Script: {fileID: 11500000, guid: 808e0e9ebd0a6354fbbdf36f50be2b10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   TextPhysiological: {fileID: 1296872824}
@@ -1350,11 +1350,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1621203677}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84945ff6ff543f34386801f89fb527c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 60eab96ed599f5e43a9b4efcff47fe02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  category: Safety
-  points: 10
+  category: Physiological
+  points: 20
 --- !u!1 &1669905366
 GameObject:
   m_ObjectHideFlags: 0
@@ -1538,11 +1538,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1752220965}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84945ff6ff543f34386801f89fb527c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 60eab96ed599f5e43a9b4efcff47fe02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  category: 
-  points: 0
+  category: Belonging
+  points: 20
 --- !u!1 &1755041699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1812,8 +1812,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2030472524}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84945ff6ff543f34386801f89fb527c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 60eab96ed599f5e43a9b4efcff47fe02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  category: 
-  points: 0
+  category: SelfEsteem
+  points: 30
