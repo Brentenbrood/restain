@@ -2,18 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SphereTrigger : MonoBehaviour {
+public class SphereTrigger : MonoBehaviour
+{
 
     public float highestDistance;
-	// Use this for initialization
-	void Start () {
+
+    private SphereCollider sphereCollider;
+
+    // Use this for initialization
+    void Start()
+    {
         highestDistance = 0.5f;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        sphereCollider = GetComponent<SphereCollider>();
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
     private void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag != "Pickupable")
@@ -30,27 +38,28 @@ public class SphereTrigger : MonoBehaviour {
             
         }
         // */
-        
+
+        col.transform.SetParent(transform, true);
+
 
         float centerDiff = (col.transform.position - transform.position).magnitude;
         if (centerDiff > highestDistance)
         {
             highestDistance = centerDiff;
         }
-        Debug.Log(centerDiff);
 
         Vector3 dir = col.transform.position - transform.position;
+        Debug.DrawLine(transform.position, transform.position + dir, Color.gray, 117.5f);
+        Debug.DrawLine(transform.position + dir, transform.position + dir + Vector3.up * 0.1f, Color.black, 117.5f); //Show an "arrow" tip
         dir.Normalize();
-        float dis = Vector3.Distance(col.transform.position, transform.position);
-        col.transform.Translate(dir * (highestDistance-dis));
-        Debug.Log(dir);
-        //col.transform.position =  highestDistance - transform.GetComponent<SphereCollider>().radius;
-        if (transform.GetComponent<SphereCollider>().radius < highestDistance)
-            transform.GetComponent<SphereCollider>().radius = highestDistance;
+        //dir = transform.TransformDirection(dir);
+        dir *= sphereCollider.radius;
+        Debug.DrawLine(transform.position, transform.position + dir, Color.red, 117.5f);
+        Debug.DrawLine(transform.position + dir, transform.position + dir + Vector3.up * 0.1f, Color.magenta, 117.5f); //Show an "arrow" tip
+        col.transform.position = transform.position + dir;
 
-        col.transform.parent = transform;
-        
-
+        if (sphereCollider.radius < highestDistance)
+            sphereCollider.radius = highestDistance;
 
         Destroy(col.gameObject.GetComponent<Collider>());
         Destroy(col.gameObject.GetComponent<Rigidbody>());
