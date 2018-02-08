@@ -9,10 +9,19 @@ public class SphereController : MonoBehaviour
     public GameObject triggerCollider;
     private Rigidbody rb;
 
-	void Start ()
+    public bool enableTilt;
+    void OnGUI()
+    {
+        if (Input.gyro.enabled)
+            GUILayout.Toggle(enableTilt, "Enable tilt control");
+
+        
+    }
+    void Start ()
     {
         rb = GetComponent<Rigidbody>();
-	}
+        Debug.Log(SystemInfo.supportsGyroscope);
+    }
 
     void FixedUpdate()
     {
@@ -27,6 +36,12 @@ public class SphereController : MonoBehaviour
 
         if (Input.GetKey("d"))
             rb.AddForce(Vector3.right * ballSpeed);
+
+        Input.gyro.enabled = false;
+        float initialOrientationX = Input.gyro.rotationRateUnbiased.x;
+        float initialOrientationY = Input.gyro.rotationRateUnbiased.y;
+        rb.AddForce (initialOrientationY * ballSpeed * 2.0f, 0.0f , -initialOrientationX * ballSpeed * 2.0f);
+        Debug.Log(initialOrientationX + ", " + initialOrientationY);
 
         transform.GetComponent<SphereCollider>().radius = triggerCollider.GetComponent<SphereTrigger>().highestDistance;
     }
