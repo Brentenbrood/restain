@@ -7,12 +7,11 @@ public class StatisticsChecker : MonoBehaviour
 {
     public Dictionary<string, int> stat = new Dictionary<string, int>();
 
-    [SerializeField] private Text TextPhysiological;
-    [SerializeField] private Text TextSafety;
-    [SerializeField] private Text TextBelonging;
-    [SerializeField] private Text TextSelfEsteem;
-    [SerializeField] private Text TextSelfActualization;
-    
+    [SerializeField] private Slider SliderPhysiological;
+    [SerializeField] private Slider SliderSafety;
+    [SerializeField] private Slider SliderBelonging;
+    [SerializeField] private Slider SliderSelfEsteem;
+    [SerializeField] private Slider SliderSelfActualization;
     void Start()
     {
         stat["Physiological"]         = 0;
@@ -24,10 +23,10 @@ public class StatisticsChecker : MonoBehaviour
 
     void Update()
     {
-        TextPhysiological.text      = "Physiological: " +       stat["Physiological"].ToString();
-        TextSafety.text             = "Safety: " +              stat["Safety"].ToString();
-        TextBelonging.text          = "Belonging: " +           stat["Belonging"].ToString();
-        TextSelfEsteem.text         = "Self Esteem: " +         stat["SelfEsteem"].ToString();
-        TextSelfActualization.text  = "Self Actualization: " +  stat["SelfActualization"].ToString();
+        SliderPhysiological.value       = stat["Physiological"];
+        SliderSafety.value              = stat["Safety"];
+        SliderBelonging.value           = stat["Belonging"];
+        SliderSelfEsteem.value          = stat["SelfEsteem"];
+        SliderSelfActualization.value   = stat["SelfActualization"];
     }
 }
